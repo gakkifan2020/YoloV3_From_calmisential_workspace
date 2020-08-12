@@ -35,9 +35,9 @@ class YoloLoss(tf.keras.losses.Loss):
         B_int = tf.convert_to_tensor(B, dtype=tf.dtypes.int32)    # tf.Tensor(4, shape=(), dtype=int32)
         B_float = tf.convert_to_tensor(B, dtype=tf.dtypes.float32)  # tf.Tensor(4.0, shape=(), dtype=float32)
         for i in range(self.scale_num):
-            true_object_mask = y_true[i][..., 4:5]
+            true_object_mask = y_true[i][..., 4:5]  # y i 的 confidence
             true_object_mask_bool = tf.cast(true_object_mask, dtype=tf.dtypes.bool)
-            true_class_probs = y_true[i][..., 5:]
+            true_class_probs = y_true[i][..., 5:]   # y i 的 分类概率
 
             pred_xy, pred_wh, grid, pred_features = bounding_box_predict(feature_map=y_pred[i],
                                                                          scale_type=i,

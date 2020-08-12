@@ -83,5 +83,4 @@ if __name__ == '__main__':
 
         if test_images_during_training:
             visualize_training_results(pictures=test_images, model=net, epoch=epoch)
-
-    net.save_weights(filepath=save_model_dir+"saved_model", save_format='tf')
+net.save_weights(filepath=save_model_dir+"saved_model", save_format='tf')

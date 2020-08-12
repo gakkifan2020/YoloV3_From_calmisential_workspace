@@ -1,8 +1,8 @@
 # training
 EPOCHS = 1000
-BATCH_SIZE = 4
-load_weights_before_training = False
-load_weights_from_epoch = 10
+BATCH_SIZE = 16
+load_weights_before_training = True
+load_weights_from_epoch = 0
 
 # input image
 IMAGE_HEIGHT = 416
@@ -69,14 +69,14 @@ MAX_TRUE_BOX_NUM_PER_IMG = 20
 
 # save model
 save_model_dir = "saved_model/"
-save_frequency = 5
+save_frequency = 1
 
 # tensorflow lite model
 TFLite_model_dir = "yolov3_model.tflite"
 
 test_images_during_training = True
 training_results_save_dir = "./test_results_during_training/"
-test_images = ["", ""]
+test_images = ["./test_data/1.jpg", "./test_data/2.jpg"]
 
 test_picture_dir = "./test_data/1.jpg"
 test_video_dir = "./test_data/test_video.mp4"
